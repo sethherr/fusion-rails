@@ -1,6 +1,7 @@
-import {decodeHTML} from 'utils';
+// import {decodeHTML} from 'utils';
 
-export var Key = React.createClass({
+// export var Key = React.createClass({
+var Key = React.createClass({
   handleClick: function() {
     this.props.onSelectKey(this.props.keyIndex);
   },

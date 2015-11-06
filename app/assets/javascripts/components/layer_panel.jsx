@@ -1,4 +1,5 @@
-export var LayerPanel = React.createClass({
+// export var LayerPanel = React.createClass({
+var LayerPanel = React.createClass({
   handleChange: function() {
     this.props.onLayerInfoChange(this.refs.layerDescription.value);
   },

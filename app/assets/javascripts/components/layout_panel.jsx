@@ -1,4 +1,5 @@
-export var LayoutPanel = React.createClass({
+// export var LayoutPanel = React.createClass({
+var LayoutPanel = React.createClass({
   handleChange: function() {
     this.props.onLayoutInfoChange(this.refs.description.value);
   },

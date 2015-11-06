@@ -1,4 +1,5 @@
-export var LayerSelection = React.createClass({
+// export var LayerSelection = React.createClass({
+var LayerSelection = React.createClass({
   handleChange: function() {
     this.props.onSelectLayer(this.refs.selectedLayer.value);
   },

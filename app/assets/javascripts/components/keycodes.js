@@ -12,7 +12,8 @@
  * http://unicode-table.com/en/search/
  * https://thenounproject.com/search/
  */
-export const keyCodes = {
+// export const keyCodes = {
+const keyCodes = {
   500: ["", "KC_NO", "other"],
   501: ["", "KC_ROLL_OVER", "other"],
   502: ["", "KC_POST_FAIL", "other"],
@@ -303,7 +304,8 @@ export const keyCodes = {
   1110: ["DF10", "DF(10)", "layer"],
 };
 
-export const keyCategories = {
+// export const keyCategories = {
+const keyCategories = {
   "toggle": "Toggle layer",
   "momentary": "Mometary layer switch",
   "layer": "Layer switch",

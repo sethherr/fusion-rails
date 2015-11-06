@@ -1,5 +1,6 @@
 
-export var decodeHTML = function(text) {
+// export var decodeHTML = function(text) {
+ var decodeHTML = function(text) {
   var map = {"gt":">" /* , … */};
   return text.replace(/&(#(?:x[0-9a-f]+|\d+)|[a-z]+);?/gi, function($0, $1) {
     if ($1[0] === "#") {
