@@ -1,12 +1,3 @@
-// import {Layer} from 'layer';
-// import {LayerSelection} from 'layer_selection';
-// import {LayoutPanel} from 'layout_panel';
-// import {LayerPanel} from 'layer_panel';
-// import {KeyPanel} from 'key_panel';
-
-// import {keyCodes} from 'keycodes';
-
-// export var App = React.createClass({
 var App = React.createClass({
   getInitialState: function() {
     return {
@@ -63,8 +54,6 @@ var App = React.createClass({
   },
 
   render: function() {
-    console.log("this.state", this.state);
-
     var selectedLayer = this.state.selectedLayer;
     var selectedKey = this.state.selectedKey;
     var keymap = this.state.layout.layers[selectedLayer].keymap;
