@@ -63,6 +63,8 @@ var App = React.createClass({
   },
 
   render: function() {
+    console.log("this.state", this.state);
+
     var selectedLayer = this.state.selectedLayer;
     var selectedKey = this.state.selectedKey;
     var keymap = this.state.layout.layers[selectedLayer].keymap;
