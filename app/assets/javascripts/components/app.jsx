@@ -111,9 +111,22 @@ var App = React.createClass({
     var jsn = JSON.stringify(this.state.layout);
     //console.log(jsn);
     //alert("Check browser console for JSON output");
-    var $layout = $('#layout');
-    $layout.val(jsn);
-    $layout.closest('form').submit();
+    if(false) {
+      var $layout = $('#layout');
+      $layout.val(jsn);
+      $layout.closest('form').submit();
+    } else {
+      $.ajax({
+        type: "PUT",
+        url: window.location.pathname,
+        data: {layout: this.state.layout},
+        dataType: 'json'
+      }).done(function() {
+        alert( "Saved" );
+      }).fail(function() {
+        alert( "Error, please try again." );
+      });
+    }
   },
 
   load: function() {
