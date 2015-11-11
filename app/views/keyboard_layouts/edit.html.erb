@@ -1,4 +1,4 @@
-<%= form_tag(controller: "keyboard_layouts", action: "update", method: "put") do %>
+<%= form_tag(keyboard_layout_url(1), method: "put") do %>
     <%= react_component('App') %>
     <%= hidden_field_tag(:layout) %>
 <% end %>

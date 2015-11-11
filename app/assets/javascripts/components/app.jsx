@@ -58,11 +58,11 @@ var App = React.createClass({
     var selectedKey = this.state.selectedKey;
     var keymap = this.state.layout.layers[selectedLayer].keymap;
     var keyInfo = keymap[this.state.selectedKey]||{};
+    //<button onClick={this.load}>Load</button>
     return (
       <div>
-        <button onClick={this.addLayer}>Add layer</button>
-        <button onClick={this.load}>Load</button>
         <button onClick={this.save}>Save</button>
+        <button onClick={this.addLayer}>Add layer</button>
         <LayerSelection layers={this.state.layout.layers} selectedLayer={selectedLayer} onSelectLayer={this.selectLayer}/>
         <Layer type={this.state.layout.type} keymap={keymap} selectedKey={selectedKey} onSelectKey={this.selectKey}/>
         <div className="row">
