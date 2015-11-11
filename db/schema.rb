@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111014837) do
+ActiveRecord::Schema.define(version: 20151111015332) do
 
   create_table "keyboards", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151111014837) do
     t.integer  "layout_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "stack_position"
   end
 
   create_table "layouts", force: :cascade do |t|
