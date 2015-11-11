@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111013938) do
+ActiveRecord::Schema.define(version: 20151111014837) do
 
   create_table "keyboards", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.string   "keycode"
+    t.integer  "position"
+    t.integer  "layer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
