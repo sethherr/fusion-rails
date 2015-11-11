@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'layouts#index'
+  root 'keyboard_layouts#index'
+  resources :keyboard_layouts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

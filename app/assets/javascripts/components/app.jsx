@@ -108,8 +108,12 @@ var App = React.createClass({
    * the user wants to save the layout
    */
   save: function() {
-    console.log(JSON.stringify(this.state.layout, null, "  "));
-    alert("Check browser console for JSON output");
+    var jsn = JSON.stringify(this.state.layout);
+    //console.log(jsn);
+    //alert("Check browser console for JSON output");
+    var $layout = $('#layout');
+    $layout.val(jsn);
+    $layout.closest('form').submit();
   },
 
   load: function() {
