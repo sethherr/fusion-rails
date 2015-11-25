@@ -1,7 +1,7 @@
 var App = React.createClass({
   getInitialState: function() {
     return {
-      layout: this.props.layout||{"type": "ergodox_ez","description": "Untitled","properties": {},"layers": [{"description": "Untitled","properties": {},"keymap": []}]},
+      layout: this.props.layout||{"kind": "ergodox_ez","description": "Untitled","properties": {},"layers": [{"description": "Untitled","properties": {},"keys": []}]},
       selectedLayer: 0,
       selectedKey: null,
     };
@@ -19,7 +19,7 @@ var App = React.createClass({
 
 
   addLayer: function() {
-    this.state.layout.layers.push({description: 'Untitled', keymap: []});
+    this.state.layout.layers.push({description: 'Untitled', keys: []});
     this.setState(this.state);
   },
 
@@ -44,27 +44,27 @@ var App = React.createClass({
   },
 
   keyInfoChange: function(description, code, ltl) {
-    if (!this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey]) {
-      this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey] = {};
+    if (!this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey]) {
+      this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey] = {};
     }
-    this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey].description = description;
-    this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey].code = code;
-    this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey].label = ltl;
+    this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].description = description;
+    this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].code = code;
+    this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].label = ltl;
     this.setState(this.state);
   },
 
   render: function() {
     var selectedLayer = this.state.selectedLayer;
     var selectedKey = this.state.selectedKey;
-    var keymap = this.state.layout.layers[selectedLayer].keymap;
-    var keyInfo = keymap[this.state.selectedKey]||{};
+    var keys = this.state.layout.layers[selectedLayer].keys;
+    var keyInfo = keys[this.state.selectedKey]||{};
     //<button onClick={this.load}>Load</button>
     return (
       <div>
         <button onClick={this.save}>Save</button>
         <button onClick={this.addLayer}>Add layer</button>
         <LayerSelection layers={this.state.layout.layers} selectedLayer={selectedLayer} onSelectLayer={this.selectLayer}/>
-        <Layer type={this.state.layout.type} keymap={keymap} selectedKey={selectedKey} onSelectKey={this.selectKey}/>
+        <Layer kind={this.state.layout.kind} keys={keys} selectedKey={selectedKey} onSelectKey={this.selectKey}/>
         <div className="row">
           <div className="col-sm-4">
             <LayerPanel layer={this.state.layout.layers[selectedLayer]} selectedLayer={selectedLayer} onLayerInfoChange={this.layerInfoChange}/>
@@ -92,11 +92,11 @@ var App = React.createClass({
         return;
       }
 
-      if (!this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey]) {
-        this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey] = {};
+      if (!this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey]) {
+        this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey] = {};
       }
-      this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey].code = keyCodes[event.keyCode][1];
-      this.state.layout.layers[this.state.selectedLayer].keymap[this.state.selectedKey].label = keyCodes[event.keyCode][0];
+      this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].code = keyCodes[event.keyCode][1];
+      this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].label = keyCodes[event.keyCode][0];
       this.setState(this.state);
 
       event.preventDefault();
@@ -108,7 +108,7 @@ var App = React.createClass({
    * the user wants to save the layout
    */
   save: function() {
-    var jsn = JSON.stringify(this.state.layout);
+    //var jsn = JSON.stringify(this.state.layout);
     //console.log(jsn);
     //alert("Check browser console for JSON output");
     if(false) {
@@ -120,6 +120,7 @@ var App = React.createClass({
         type: "PUT",
         url: window.location.pathname,
         data: {layout: this.state.layout},
+        contentType: 'application/json',
         dataType: 'json'
       }).done(function() {
         alert( "Saved" );

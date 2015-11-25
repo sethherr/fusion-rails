@@ -52,9 +52,9 @@ var Layer = React.createClass({
       position: 'relative',
       height: 415,
     };
-    var keys = KEY_DEFINITIONS[this.props.type].map(function (key, i) {
+    var keys = KEY_DEFINITIONS[this.props.kind].map(function (key, i) {
       var data = key;
-      data.label = self.props.keymap[i] ? self.props.keymap[i].label : '';
+      data.label = self.props.keys[i] ? self.props.keys[i].label : '';
       return (
         <Key data={data} key={i} keyIndex={i} selectedKey={self.props.selectedKey} onSelectKey={self.props.onSelectKey}/>
       );

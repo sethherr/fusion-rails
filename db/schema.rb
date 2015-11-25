@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111015826) do
+ActiveRecord::Schema.define(version: 20151125195940) do
 
   create_table "keyboards", force: :cascade do |t|
     t.string   "name"
@@ -21,15 +21,16 @@ ActiveRecord::Schema.define(version: 20151111015826) do
   end
 
   create_table "keys", force: :cascade do |t|
-    t.string   "keycode"
+    t.string   "code"
     t.integer  "position"
     t.integer  "layer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "label"
   end
 
   create_table "layers", force: :cascade do |t|
-    t.string   "name"
+    t.string   "description"
     t.integer  "layout_id"
     t.datetime "created_at"
     t.datetime "updated_at"
