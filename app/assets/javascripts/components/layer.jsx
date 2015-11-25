@@ -1,5 +1,3 @@
-// import {Key} from 'key';
-
 var KEY_DEFINITIONS = {
   'ergodox_ez': [
     // LEFT
@@ -30,9 +28,22 @@ var KEY_DEFINITIONS = {
     {x: 11, y: 4, height: 2, hoffset: 0.13, voffset: 0.74, rotate: -30, origin: 'top right'},
     {x: 12, y: 4, height: 2, voffset: 0.24, rotate: -30, origin: 'top right'},
   ],
+  'planck': [
+    {x:0, y: 0}, {x:1, y: 0}, {x:2, y: 0}, {x:3, y: 0}, {x:4, y: 0}, {x:5, y: 0}, {x:6, y: 0}, {x:7, y: 0}, {x:8, y: 0}, {x:9, y: 0}, {x:10, y: 0}, {x:11, y: 0},
+    {x:0, y: 1}, {x:1, y: 1}, {x:2, y: 1}, {x:3, y: 1}, {x:4, y: 1}, {x:5, y: 1}, {x:6, y: 1}, {x:7, y: 1}, {x:8, y: 1}, {x:9, y: 1}, {x:10, y: 1}, {x:11, y: 1},
+    {x:0, y: 2}, {x:1, y: 2}, {x:2, y: 2}, {x:3, y: 2}, {x:4, y: 2}, {x:5, y: 2}, {x:6, y: 2}, {x:7, y: 2}, {x:8, y: 2}, {x:9, y: 2}, {x:10, y: 2}, {x:11, y: 2},
+    {x:0, y: 3}, {x:1, y: 3}, {x:2, y: 3}, {x:3, y: 3}, {x:4, y: 3}, {x:5, y: 3, width: 2}, {x:7, y: 3}, {x:8, y: 3}, {x:9, y: 3}, {x:10, y: 3}, {x:11, y: 3}
+  ],
+  'preonic': [
+    {x:0, y: 0}, {x:1, y: 0}, {x:2, y: 0}, {x:3, y: 0}, {x:4, y: 0}, {x:5, y: 0}, {x:6, y: 0}, {x:7, y: 0}, {x:8, y: 0}, {x:9, y: 0}, {x:10, y: 0}, {x:11, y: 0},
+    {x:0, y: 1}, {x:1, y: 1}, {x:2, y: 1}, {x:3, y: 1}, {x:4, y: 1}, {x:5, y: 1}, {x:6, y: 1}, {x:7, y: 1}, {x:8, y: 1}, {x:9, y: 1}, {x:10, y: 1}, {x:11, y: 1},
+    {x:0, y: 2}, {x:1, y: 2}, {x:2, y: 2}, {x:3, y: 2}, {x:4, y: 2}, {x:5, y: 2}, {x:6, y: 2}, {x:7, y: 2}, {x:8, y: 2}, {x:9, y: 2}, {x:10, y: 2}, {x:11, y: 2},
+    {x:0, y: 3}, {x:1, y: 3}, {x:2, y: 3}, {x:3, y: 3}, {x:4, y: 3}, {x:5, y: 3}, {x:6, y: 3}, {x:7, y: 3}, {x:8, y: 3}, {x:9, y: 3}, {x:10, y: 3}, {x:11, y: 3},
+    {x:0, y: 4}, {x:1, y: 4}, {x:2, y: 4}, {x:3, y: 4}, {x:4, y: 4}, {x:5, y: 4, width: 2}, {x:7, y: 4}, {x:8, y: 4}, {x:9, y: 4}, {x:10, y: 4}, {x:11, y: 4}
+  ]
+
 };
 
-// export var Layer = React.createClass({
 var Layer = React.createClass({
   render: function() {
     var self = this;
