@@ -9,8 +9,8 @@ class KeyboardLayoutsController < ApplicationController
   end
   def update
     layout = Layout.find(params[:id])
-    layout = Layout.new(layout_params)
     Rails.logger.debug "layout: #{layout_params}"
+    layout.update!(layout_params)
     render json: {}
   end
 
@@ -25,13 +25,14 @@ class KeyboardLayoutsController < ApplicationController
   end
 
   def layout_params
-    #permitted = [:kind, :description, layers: [layer_params]]
     permitted = [layers: [layer_params]]
 
     params.require(:layout).permit(permitted).tap do |whitelisted|
       whitelisted[:layers_attributes] = whitelisted.delete(:layers)
-      # whitelisted[:kind] = params[:layout][:type]
-      # whitelisted.delete(:type)
+      whitelisted[:layers_attributes] = whitelisted[:layers_attributes].map do |l|
+        l[:keys_attributes] = l.delete(:keys)
+        l
+      end
     end
   end
 end
