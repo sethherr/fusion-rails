@@ -108,7 +108,7 @@ var App = React.createClass({
    * the user wants to save the layout
    */
   save: function() {
-    //var jsn = JSON.stringify(this.state.layout);
+    var jsn = JSON.stringify({layout: this.state.layout});
     //console.log(jsn);
     //alert("Check browser console for JSON output");
     if(false) {
@@ -119,7 +119,7 @@ var App = React.createClass({
       $.ajax({
         type: "PUT",
         url: window.location.pathname,
-        data: {layout: this.state.layout},
+        data: jsn,
         contentType: 'application/json',
         dataType: 'json'
       }).done(function() {
