@@ -50,6 +50,7 @@ var App = React.createClass({
     this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].description = description;
     this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].code = code;
     this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].label = ltl;
+    this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].position = this.state.selectedKey;
     this.setState(this.state);
   },
 
