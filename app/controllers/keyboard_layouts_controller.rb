@@ -17,7 +17,7 @@ class KeyboardLayoutsController < ApplicationController
   private
 
   def key_params
-    [:label, :code]
+    [:label, :code, :position]
   end
 
   def layer_params
