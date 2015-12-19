@@ -98,6 +98,7 @@ var App = React.createClass({
       }
       this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].code = keyCodes[event.keyCode][1];
       this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].label = keyCodes[event.keyCode][0];
+      this.state.layout.layers[this.state.selectedLayer].keys[this.state.selectedKey].position = this.state.selectedKey;
       this.setState(this.state);
 
       event.preventDefault();
@@ -110,7 +111,7 @@ var App = React.createClass({
    */
   save: function() {
     var jsn = JSON.stringify({layout: this.state.layout});
-    //console.log(jsn);
+    console.log(jsn);
     //alert("Check browser console for JSON output");
     if(false) {
       var $layout = $('#layout');
