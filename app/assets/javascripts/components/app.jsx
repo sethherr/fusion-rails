@@ -62,21 +62,33 @@ var App = React.createClass({
     //<button onClick={this.load}>Load</button>
     return (
       <div>
-        <button onClick={this.save}>Save</button>
-        <button onClick={this.addLayer}>Add layer</button>
-        <LayerSelection layers={this.state.layout.layers} selectedLayer={selectedLayer} onSelectLayer={this.selectLayer}/>
+        <div className="container">
+          <div className="row layout-storing-form">
+            <div className="col-sm-offset-3 col-sm-3">
+              <button className='btn btn-primary' onClick={this.save}>Save</button>
+            </div>
+            <div className="col-sm-3">
+              <button className='btn btn-default' onClick={this.addLayer}>Add layer</button>
+            </div>
+            <div className="col-sm-3">
+              <LayerSelection layers={this.state.layout.layers} selectedLayer={selectedLayer} onSelectLayer={this.selectLayer}/>
+            </div>
+          </div>
+        </div>
         <Layer kind={this.state.layout.kind} keys={keys} selectedKey={selectedKey} onSelectKey={this.selectKey}/>
-        <div className="row">
-          <div className="col-sm-4">
-            <LayerPanel layer={this.state.layout.layers[selectedLayer]} selectedLayer={selectedLayer} onLayerInfoChange={this.layerInfoChange}/>
-          </div>
-          <div className="col-sm-4">
-            { selectedKey != null ? <KeyPanel keyInfo={keyInfo} selectedKey={selectedKey}
-                                                 onKeyInfoChange={this.keyInfoChange}/> : null
-            }
-          </div>
-          <div className="col-sm-4">
-            <LayoutPanel layout={this.state.layout} onLayoutInfoChange={this.layoutInfoChange}/>
+        <div className="container">
+          <div className="row layout-info">
+            <div className="col-sm-4">
+              <LayerPanel layer={this.state.layout.layers[selectedLayer]} selectedLayer={selectedLayer} onLayerInfoChange={this.layerInfoChange}/>
+            </div>
+            <div className="col-sm-4">
+              { selectedKey != null ? <KeyPanel keyInfo={keyInfo} selectedKey={selectedKey}
+                                                   onKeyInfoChange={this.keyInfoChange}/> : null
+              }
+            </div>
+            <div className="col-sm-4">
+              <LayoutPanel layout={this.state.layout} onLayoutInfoChange={this.layoutInfoChange}/>
+            </div>
           </div>
         </div>
       </div>

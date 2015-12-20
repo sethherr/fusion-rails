@@ -1,0 +1,65 @@
+$highlight-color: deepskyblue;
+$selected-color: red;
+
+.wrap {
+  padding: 40px 0;
+}
+
+.layout-storing-form {
+  padding: 0 0 40px;
+  .btn { width: 100%; }
+}
+
+.layout-info {
+  padding: 20px 0 0;
+}
+
+.layout {
+  width: 1055px;
+  margin: 0 auto;
+}
+
+.layer-template {
+  display: none;
+}
+
+.layer {
+  position: relative;
+}
+
+.key {
+  border: 1px solid black;
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  border-radius: 5px;
+  background-color: #cccccc;
+  padding: 0;
+  margin: 0;
+  &:hover {
+    border: 1px solid $highlight-color;
+  }
+  &.selected {
+    border: 1px solid $selected-color;
+  }
+}
+
+.keytop {
+  background-color: #fcfcfc;
+  border: solid 1px #aaa;
+  border-radius: 3px;
+  display: block;
+  position: relative;
+  margin: 3px 3px 8px;
+}
+
+.l {
+  font-family: "Helvetica";
+  position: absolute;
+  color: $text-color;
+  font-weight: normal;
+  padding: 0;
+  margin: -.5em 0 0 -.5em;
+  top: 50%; left: 50%;
+  text-align: center;
+}

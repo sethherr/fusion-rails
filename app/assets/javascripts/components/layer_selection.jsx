@@ -11,7 +11,7 @@ var LayerSelection = React.createClass({
       );
     });
     return (
-      <select ref="selectedLayer" value={this.props.selectedLayer} onChange={this.handleChange}>
+      <select className="form-control" ref="selectedLayer" value={this.props.selectedLayer} onChange={this.handleChange}>
         {options}
       </select>
     );
